@@ -1,0 +1,11 @@
+#.htaccess file to redirect all non-existent paths and files to "/index.php"
+
+<IfModule mod_rewrite.c>
+
+   RewriteEngine On
+
+   RewriteCond %{REQUEST_FILENAME} !-f [OR]
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteRule ^(.*)$ index.php [L,QSA]
+
+</IfModule>
