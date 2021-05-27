@@ -11,7 +11,7 @@ https://www.example.com/?vulnparm=http://yourserver.com
 
 ![Concept](https://user-images.githubusercontent.com/54465159/119440259-4213d380-bd24-11eb-8915-9a819a9960d7.PNG)
 
-- The log file created in the `/ logs` directory will logging the request headers and request body:
+- The log file created in the `/logs` directory will logging the request headers and request body:
 
 ```
 # request log file sample
