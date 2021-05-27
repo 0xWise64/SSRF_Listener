@@ -1,13 +1,25 @@
 <?php
+# Logging all requests including headers and request body
+function logRequest($targetFile) {
+    $headerList = [];
+    foreach ($_SERVER as $name => $value) {
+        if (preg_match('/^HTTP_/',$name)) {
+            $name = strtr(substr($name,5),'_',' ');
+            $name = ucwords(strtolower($name));
+            $name = strtr($name,' ','-');
+            $headerList[$name] = $value;
+            }}
+            $data = sprintf("[".date('d/m/Y h:i:s')."]\n\n%s %s %s\n",
+            $_SERVER['REQUEST_METHOD'],
+            $_SERVER['REQUEST_URI'],
+            $_SERVER['SERVER_PROTOCOL']);
+            foreach ($headerList as $name => $value) {
+                $data .= $name.': '.$value."\n"; }
+                $data .= "\n";
+                file_put_contents($targetFile,
+                $data.file_get_contents('php://input')."\n\n");
+                };
 
-$iplogfile = 'logs.txt';
-$ipaddress = $_SERVER['REMOTE_ADDR'];
-$webpage = $_SERVER['SCRIPT_NAME'];
-$timestamp = date('d/m/Y h:i:s');
-$browser = $_SERVER['HTTP_USER_AGENT'];
-$fp = fopen($iplogfile, 'a+');
-chmod($iplogfile, 0777);
-fwrite($fp, '['.$timestamp.']: '.$ipaddress.' '.$webpage.' '.$browser. "\n\n");
-fclose($fp);
+logRequest("./logs/req-".time().".log");
 
 ?>
