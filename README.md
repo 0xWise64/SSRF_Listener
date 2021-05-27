@@ -1,12 +1,18 @@
-# SSRF_Listener
-Simple script to listen for incoming http requests to detect SSRF vulnerability. The script is sample alternative of burp collaborator.
+# About SSRF_Listener
+Simple script to listen for incoming http requests to detect SSRF vulnerability. The script is alternative of burpsuite collaborator.
 
 ## Setup and Usage
 
 - To use the script, you have to host it on your own web server making sure PHP is installed on your server:
+
 ```
 https://www.example.com/?vulnparm=http://yourserver.com
 ```
+
+## Examples
+
+- You can call your "SSRF_Listener" at any endpoint and it will log requests, as well as any HTTP request method.
+
 - If the target is vulnerable with SSRF, you will see the following response with the received request logged in the `req-time.log` file.
 
 ![Concept](https://user-images.githubusercontent.com/54465159/119440259-4213d380-bd24-11eb-8915-9a819a9960d7.PNG)
