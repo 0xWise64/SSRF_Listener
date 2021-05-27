@@ -11,7 +11,7 @@ https://www.example.com/?vulnparm=http://yourserver.com
 
 ## Examples
 
-- You can call your "SSRF_Listener" at any endpoint and it will log requests, as well as any HTTP request method.
+- You can call your `SSRF_Listener` server from any endpoint and it will log requests, as well as any HTTP request method.
 
 - If the target is vulnerable with SSRF, you will see the following response with the received request logged in the `req-time.log` file.
 
