@@ -7,16 +7,16 @@ Simple script to listen for incoming http requests to detect SSRF vulnerability.
 ```
 https://www.example.com/?vulnparm=http://yourserver.com
 ```
-- If the target is vulnerable with SSRF, you will see the following response with the received request logged in the `/logs/{logfile}.log` file.
+- If the target is vulnerable with SSRF, you will see the following response with the received request logged in the `req-time.log` file.
 
 ![Concept](https://user-images.githubusercontent.com/54465159/119440259-4213d380-bd24-11eb-8915-9a819a9960d7.PNG)
 
-- The log file created in the `/logs` directory will logging the request headers and request body:
+- The log file created in the `/logs` directory will logging the request headers and request body, example file:
 
 ```
-# request log file sample
+#req-1622096120.log, request log file sample:
 
-[27/05/2021 06:15:20]
+[27/05/2021 06:15:20] # Time of the request
 
 GET / HTTP/1.1
 Host: Example.com
