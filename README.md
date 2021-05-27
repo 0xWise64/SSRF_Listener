@@ -7,13 +7,26 @@ Simple script to listen for incoming http requests to detect SSRF vulnerability.
 ```
 https://www.example.com/?vulnparm=http://yourserver.com
 ```
-- If the target is vulnerable with SSRF, you will see the following response with the received request logged in the `logs.txt` file.
+- If the target is vulnerable with SSRF, you will see the following response with the received request logged in the `/logs/{logfile}.log` file.
 
 ![Concept](https://user-images.githubusercontent.com/54465159/119440259-4213d380-bd24-11eb-8915-9a819a9960d7.PNG)
 
-
-`logs.txt` file:
+- The log file created in the `/ logs` directory will logging the request headers and request body:
 
 ```
-[25/05/2021 04:29:02]: 172.18.0.1 /index.php Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0
+# request log file sample
+
+[27/05/2021 06:15:20]
+
+GET / HTTP/1.1
+Host: Example.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.5
+Cookie: ajs_anonymous_id=%22ff51523f-2801-4ab9-a171-68576cd7fa3b%22; _ga=GA1.3.232960319.1608872810; _hjid=e2457e49-2d02-406a-b77b-c56d43bc2568
+Upgrade-Insecure-Requests: 1
+Any-Header: Testing
+
+RequestBodyHere
 ```
