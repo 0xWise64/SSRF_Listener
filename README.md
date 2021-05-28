@@ -20,19 +20,20 @@ https://www.example.com/?vulnparm=http://yourserver.com
 - The log file created in the `/logs` directory will logging the request headers and request body, example file:
 
 ```
-#req-1622096120.log, request log file sample:
+The request was received from IP address 127.0.0.0.0.01 at [28-05-2021 05:57:51].
 
-[27/05/2021 06:15:20] # Time of the request
-
-GET / HTTP/1.1
-Host: Example.com
+GET /anythinghere.bla HTTP/1.1
+Connection: Keep-Alive
+Proxy-Connection: Keep-Alive
+Host: example.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-Accept-Encoding: gzip, deflate, br
 Accept-Language: en-US,en;q=0.5
-Cookie: ajs_anonymous_id=%22ff51523f-2801-4ab9-a171-68576cd7fa3b%22; _ga=GA1.3.232960319.1608872810; _hjid=e2457e49-2d02-406a-b77b-c56d43bc2568
-Upgrade-Insecure-Requests: 1
-Any-Header: Testing
+Accept-Encoding: gzip, deflate, br
+Referer: https://example.com/hack.html
+Cookie: _ga=GA1.2.639464471.1621981801; _gid=GA1.2.530976924.1622177183; _omappvp=UM6KHdstPCBGls2YnTC8bNfG04QCgqIG0HI4IeMiCbVFSFiVggakE76RwStElAPDchVj0WIxPx4w0MaAhn8PJcFVbI3jktPS
+
 
 RequestBodyHere
+
 ```
