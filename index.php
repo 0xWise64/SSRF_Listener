@@ -12,7 +12,7 @@
 <body>
 
 <center>
-	<h1>Your SSRF Listener Script coded by Kerolos Atef AKA 0xWise, 3x3s.</h1>
+	<h1>Your SSRF Listener coded with &#129505; by Kerolos Atef aka 0xWise, 3x3s.</h1>
 	<h3 id="vuln"></h3>
         <p id="ip"></p>
 </center>
