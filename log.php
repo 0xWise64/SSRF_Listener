@@ -9,7 +9,7 @@ function logRequest($targetFile) {
             $name = strtr($name,' ','-');
             $headerList[$name] = $value;
             }}
-            $data = sprintf("[".date('d/m/Y h:i:s')."]\n\n%s %s %s\n",
+            $data = sprintf("The request was received from IP address ".$_SERVER['REMOTE_ADDR']." at [".date('d-m-Y h:i:s')."].\n\n%s %s %s\n",
             $_SERVER['REQUEST_METHOD'],
             $_SERVER['REQUEST_URI'],
             $_SERVER['SERVER_PROTOCOL']);
