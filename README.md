@@ -15,7 +15,7 @@ https://www.example.com/?vulnparm=http://yourserver.com
 
 - If the target is vulnerable with SSRF, you will see the following response with the received request logged in the `req-time.log` file.
 
-![Concept](https://user-images.githubusercontent.com/54465159/119440259-4213d380-bd24-11eb-8915-9a819a9960d7.PNG)
+![concept](https://user-images.githubusercontent.com/54465159/119935843-6ff95200-bf88-11eb-95cc-06e52d3686ce.PNG)
 
 - The log file created in the `/logs` directory will logging the request headers and request body, example file:
 
